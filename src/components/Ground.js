@@ -12,7 +12,15 @@ function Ground(props) {
   texture.wrapT = RepeatWrapping;
   texture.repeat.set(100, 100);
   return (
-    <mesh position={(0, 0, 0)} rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh
+      ref={ref}
+      receiveShadow
+      // onClick={(e) => {
+      //   e.stopPropagation();
+      //   const { x, y, z } = e.point;
+      //   addCube(Math.ceil(x), Math.ceil(y), Math.ceil(z), type);
+      // }}
+    >
       <planeBufferGeometry attach='geometry' args={[100, 100]} />
       <meshLambertMaterial map={texture} attach='material' />
     </mesh>

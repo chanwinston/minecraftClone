@@ -5,7 +5,7 @@ function actionByKey(key) {
   const keys = {
     KeyW: "moveForward",
     KeyA: "moveLeft",
-    KeyS: "moveBackwards",
+    KeyS: "moveBackward",
     KeyD: "moveRight",
     Space: "jump",
   };
@@ -27,7 +27,7 @@ export const useKeyboardControls = () => {
   const [movement, setMovement] = useState({
     moveForward: false,
     moveLeft: false,
-    moveBackwards: false,
+    moveBackward: false,
     moveRight: false,
     jump: false,
   });

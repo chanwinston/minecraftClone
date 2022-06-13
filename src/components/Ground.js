@@ -11,7 +11,7 @@ const Ground = (props) => {
   return (
     <mesh ref={ref} receiveShadow>
       <planeBufferGeometry attach='geometry' args={[100, 100]} />
-      <meshLambertMaterial map={texture} attach='material' />
+      <meshStandardMaterial map={texture} attach='material' />
     </mesh>
   );
 };

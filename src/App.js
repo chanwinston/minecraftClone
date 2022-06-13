@@ -5,19 +5,21 @@ import "./App.css";
 import { Sky } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 import Ground from "./components/Ground";
-import Player from "./components/Player";
+import { Player } from "./components/Player";
 import { Cube } from "./components/Cube";
+
+import { useStore } from "./hooks/useStore";
 
 function App() {
   return (
-    <Canvas shadowMap sRGB>
+    <Canvas shadows>
       <Sky sunPosition={[100, 20, 100]} />
       <ambientLight intensity={0.5} />
-      <pointLight castShadow intensity={0.7} position={[100, 100, 100]} />
+      <pointLight castShadow intensity={0.75} position={[100, 100, 100]} />
       <Physics gravity={[0, -30, 0]}>
         <Ground position={[0, 0.5, 0]} />
         <Player position={[0, 3, 10]} />
-        <Cube position={[0, 1, 0]} type='log' />
+        <Cube position={[0, 1, 0]} type='grass' />
       </Physics>
     </Canvas>
   );

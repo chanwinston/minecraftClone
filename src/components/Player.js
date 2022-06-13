@@ -1,9 +1,13 @@
 import React from "react";
 import { useSphere } from "@react-three/cannon";
 import { useThree, useFrame } from "@react-three/fiber";
+import { useKeyboardControls } from "../hooks/useKeyboardControls";
 
 const Player = (props) => {
-  const [camera] = useThree();
+  const { moveForward, moveBackward, moveLeft, moveRight, jump } =
+    useKeyboardControls();
+  console.log(moveRight);
+  const { camera } = useThree();
   const [ref] = useSphere(() => ({
     mass: 1,
     type: "Dynamic",
@@ -15,7 +19,7 @@ const Player = (props) => {
   });
   return (
     <>
-      <mesh> ref={ref}</mesh>
+      <mesh ref={ref} />
     </>
   );
 };

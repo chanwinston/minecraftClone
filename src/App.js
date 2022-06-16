@@ -6,7 +6,7 @@ import { Sky } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 import Ground from "./components/Ground";
 import { Player } from "./components/Player";
-import { Cube } from "./components/Cube";
+import Cube from "./components/Cube";
 
 import { useStore } from "./hooks/useStore";
 

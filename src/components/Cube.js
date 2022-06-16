@@ -3,7 +3,7 @@ import { useBox } from "@react-three/cannon";
 import * as textures from "../textures";
 import { useStore } from "../hooks/useStore";
 
-export const Cube = ({ position, type, ...props }) => {
+const Cube = ({ position, type, ...props }) => {
   const [addCube, removeCube, activeType] = useStore((state) => [
     state.addCube,
     state.removeCube,
@@ -72,3 +72,5 @@ export const Cube = ({ position, type, ...props }) => {
     </mesh>
   );
 };
+
+export default Cube;
